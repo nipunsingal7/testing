@@ -7,6 +7,7 @@
 - [Code Explanation](#Code-Explanation)
 - [Usage](#Usage)
 
+
 ## Description
 We are setting up the shell script for installation of drupal/wordpress, php,apache2 and mysql. We will be using packers and LAMP stack for the smooth and easy installation. 
 
@@ -16,6 +17,7 @@ We are setting up the shell script for installation of drupal/wordpress, php,apa
 - Version variables
 - Choise to install drupal/wordpress
 - LAMP server and packers for installation of packets
+
 
 ## Code Explanation
 
