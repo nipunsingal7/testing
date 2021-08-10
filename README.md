@@ -14,8 +14,8 @@ We are setting up the shell script for installation of drupal/wordpress, php,apa
 ## Features
 - Fast installation
 - Version variables
-- Choise to install drupal/wordpress
-- LAMP server and packers for installation of packets
+- Choice to install drupal/wordpress
+- LAMP server and packers for installation of packages
 </br></br>
 
 ## Code Explanation
