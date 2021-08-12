@@ -12,7 +12,10 @@
 This is the packer code for creating an AMI. An instance will be launched and all the required dependencies will be put in the instance and then the AMI will be created. Once the AMI is created the instance will be automatically terminated. This will make an AMI with all the required dependencies before hand.
 </br></br>
 ## Features
-- 
+- Pre-bake AMI
+- Light weight
+- Pre-installed dependencies
+- Runs on all major operating system
 </br></br>
 
 ## Code Explanation
@@ -85,5 +88,10 @@ Here we are defining the name of our shell script which will run after booting t
 ## Usage
 
 ```bash
-./shellscript [drupal/wordpress] [version]
+packer build <filename.json>
+```
+If variables value need to be changed from command line, use this
+
+```bash
+packer build -var "variable-name=variable-value" <filename.json>
 ```
