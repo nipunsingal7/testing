@@ -17,6 +17,7 @@ This is the packer code for creating an AMI. An instance will be launched and al
 
 ## Code Explanation
 
+
 In this code we are creating the AMI by defining its name and instnce type we will be launching and various other parameters. 
 
 ```json
@@ -46,6 +47,7 @@ In this code we are creating the AMI by defining its name and instnce type we wi
 - `most_recent` If more than one result is returned, use the most recent AMI. Set it to true/false
 </br>
 
+
 This piece of code defines the tag name for our AMI that we will be creating. Tag names makes it easier to find our AMI's. 
 
 ```json
@@ -55,6 +57,7 @@ This piece of code defines the tag name for our AMI that we will be creating. Ta
 ```
 </br>
 
+
 This code defines the configuration for communication.
 
 ```json
@@ -63,6 +66,7 @@ This code defines the configuration for communication.
 ```
 - `ssh_username` We define the username to connect to SSH with. Required if using SSH.
 </br>
+
 
 Provisioners use builtin and third-party software to install and configure the machine image after booting. Provisioners prepare the system for use, common use cases for provisioners include: installing packages, patching the kernel, creating users and downloading application code.
 Here we are defining the name of our shell script which will run after booting this AMI. This shell script will contain code to install various packages in the system.
