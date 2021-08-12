@@ -17,7 +17,7 @@ This is the packer code for creating an AMI. An instance will be launched and al
 
 ## Code Explanation
 
-  
+In this code we are creating the AMI by defining its name and instnce type we will be launching and various other parameters. 
 
 ```json
       "ami_name": "ion-packer-{{timestamp}}",
@@ -34,7 +34,7 @@ This is the packer code for creating an AMI. An instance will be launched and al
       }
 ```
 
-- `ami_name` We define the name of the ami we are creating.
+- `ami_name` We define the name of the ami we are creating. Timestamp will put the time at which AMI is created.
 - `instance_type` Here we define the type of instance we want to create. The instance family we want to use.
 - `region` We define the region where we want to launch our instance.
 - `source_ami_filter` It is the filter used to populate the source_ami field.
@@ -46,7 +46,7 @@ This is the packer code for creating an AMI. An instance will be launched and al
 - `most_recent` If more than one result is returned, use the most recent AMI. Set it to true/false
 </br>
 
-We used sleep statement to hold the further execution of the script as apt-get update command sometimes takes more time than usual to completely execute.
+This piece of code defines the tag name for our AMI that we will be creating. Tag names makes it easier to find our AMI's. 
 
 ```json
  "tags": {
@@ -54,14 +54,18 @@ We used sleep statement to hold the further execution of the script as apt-get u
       }
 ```
 </br>
-We are installing tasksel, as it reduces the problem of specifying versions for php, apache and mysql.
+
+This code defines the configuration for communication.
 
 ```json
 "ssh_username": "ubuntu",
       "type": "amazon-ebs"
 ```
+- `ssh_username` We define the username to connect to SSH with. Required if using SSH.
 </br>
-We are using the lamp-server to install all the required packages, i.e mysql,php and apache. In the second command we installed the extensions needed for setting up drupal.
+
+Provisioners use builtin and third-party software to install and configure the machine image after booting. Provisioners prepare the system for use, common use cases for provisioners include: installing packages, patching the kernel, creating users and downloading application code.
+Here we are defining the name of our shell script which will run after booting this AMI. This shell script will contain code to install various packages in the system.
 
 ```json
  "provisioners": [
@@ -73,6 +77,9 @@ We are using the lamp-server to install all the required packages, i.e mysql,php
     }
    ]
 ```
+- `type` We define the type of provisioner to use.
+- `environment_vars` Here we define the environment variables, the inputs shell script requires to execute.
+- `scripts` "shell" provisioner requires the path of the script, so we define it here. 
 </br></br>
 
 ## Usage
