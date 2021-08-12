@@ -92,6 +92,7 @@ packer build <filename.json>
 ```
 If variables value need to be changed from command line, use this
 
+</br>
 ```bash
 packer build -var "variable-name=variable-value" <filename.json>
 ```
