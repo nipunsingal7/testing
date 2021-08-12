@@ -91,6 +91,7 @@ Here we are defining the name of our shell script which will run after booting t
 packer build <filename.json>
 ```
 </br>
+
 If variables value need to be changed from command line, use this
 ```bash
 packer build -var "variable-name=variable-value" <filename.json>
