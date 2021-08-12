@@ -45,6 +45,7 @@ In this code we are creating the AMI by defining its name and instnce type we wi
 - `root-device-type` It is the type of root device (ie: ebs or instance-store).
 - `owners` It is the list of AMI owners to limit the search. At least 1 value must be specified.
 - `most_recent` If more than one result is returned, use the most recent AMI. Set it to true/false
+
 </br></br>
 
 This piece of code defines the tag name for our AMI that we will be creating. Tag names makes it easier to find our AMI's. 
@@ -63,6 +64,7 @@ This code defines the configuration for communication.
       "type": "amazon-ebs"
 ```
 - `ssh_username` We define the username to connect to SSH with. Required if using SSH.
+
 </br></br>
 
 Provisioners use builtin and third-party software to install and configure the machine image after booting. Provisioners prepare the system for use, common use cases for provisioners include: installing packages, patching the kernel, creating users and downloading application code.
